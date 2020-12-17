@@ -6,14 +6,13 @@
     </head>
     <body>
         <p id="output"></p>
-      <button src="clickcounter.js" type="button" onclick="click()">Test</button>  
+      <button type="button" onclick="click()">Test</button>  
     </body>   
 </html>
-<script>
-    var x;
-    window.onload = click()
+<script src="clickcounter.js">
+    function click()
     {
         x++;
-        document.getElementById('output').innerHTML = lengthOfName;
-    };
+        document.getElementById('output').innerHTML = x;
+    }
 </script>
