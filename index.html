@@ -6,13 +6,27 @@
 <body>
     <script type="text/javascript">
     var clicks = 0;
+    var clickPower = 1;
+    var cost = 100;
     function onClick() {
-        clicks += 1;
+        clicks += clickPower;
         document.getElementById("clicks").innerHTML = clicks;
     };
+    function moreClicks()
+    {
+        if (clicks >= cost)
+        {
+            clicks - cost;
+            clickPower++;
+            cost + (cost - cost/10)
+        }
+        document.getElementById("cost").innerHTML = cost; 
+    }
     </script>
-    <button type="button" onClick="onClick()">The click</button>
     <p>Clicks: <a id="clicks">0</a></p>
+    <button type="button" onClick="onClick()">The click</button>
+    <button type="button" onclick="moreClicks()">Byu more clicks:<a id="cost">0</a></button>
+   
 
 </body>
 </html>
