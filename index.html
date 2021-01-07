@@ -18,14 +18,15 @@
         {
             clicks -= cost;
             clickPower++;
-            cost += (cost -= cost/10)
+            cost += (cost -= cost/2)
         }
         document.getElementById("cost").innerHTML = cost; 
     }
     </script>
     <p>Clicks: <a id="clicks">0</a></p>
     <button type="button" onClick="onClick()">The click</button>
-    <button type="button" onclick="moreClicks()">Byu more clicks:<a id="cost">0</a></button>
+    <button type="button" onclick="moreClicks()">Byu more clicks</button>
+    <p>Cost: <a id="cost">100</a></p>
    
 
 </body>
