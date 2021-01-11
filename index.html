@@ -1,3 +1,22 @@
+<script type="text/javascript">
+    var clicks = 0;
+    var clickPower = 1;
+    var cost = 100;
+    function onClick() {
+        clicks += clickPower;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    function moreClicks()
+    {
+        if (clicks >= cost)
+        {
+            clicks -= cost;
+            clickPower++;
+            cost += (cost -= cost/2)
+        }
+        document.getElementById("cost").innerHTML = cost; 
+    }
+</script>
 <html>
 <head>
     <title>This is good game</title>
@@ -25,7 +44,7 @@
     </script>
     <p>Clicks: <a id="clicks">0</a></p>
     <button type="button" onClick="onClick()">The click</button>
-    <button type="button" onclick="moreClicks()">Byu more clicks</button>
+    <button type="button" id="upgrade" onclick="moreClicks()">Buy more clicks</button>
     <p>Cost: <a id="cost">100</a></p>
    
 
