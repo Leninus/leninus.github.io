@@ -1,59 +1,11 @@
-
-<html>
-<head>
-    <title>This is good game</title>
-    <script type="text/javascript">
-    function refresh() {
-  var req = new XMLHttpRequest();
-  console.log("Grabbing Value");
-  req.onreadystatechange = function () {
-    if (req.readyState == 4 && req.status == 200) {
-      document.getElementById('guwiiFavouriteNumber').innerText = req.responseText;
-    }
-  }
-  req.open("GET", 'reload.txt', true); // Grabs whatever you've written in this file
-  req.send(null);
-}
-
-function init() // This is the function the browser first runs when it's loaded.
-{
-  refresh() // Then runs the refresh function for the first time.
-  var int = self.setInterval(function () {
-    refresh()
-  }, 10000); // Set the refresh() function to run every 10 seconds. [1 second would be 1000, and 1/10th of a second would be 100 etc.
-}
-        var clicks = 0;
-        var clickPower = 1;
-        var cost = 100;
-        function onClick() {
-            clicks += clickPower;
-            document.getElementById("clicks").innerHTML = clicks;
-        };
-        function moreClicks()
-        {
-            if (clicks >= cost)
-            {
-                clicks -= cost;
-                clickPower++;
-                cost += (cost -= cost/2)
-            }
-            document.getElementById("cost").innerHTML = cost; 
-        }
-    </script>
-</head>
-
-<body>
-    <p>Clicks: <a id="clicks">0</a></p>
-    <button type="button" onClick="onClick()">The click</button>
-    <button type="button" id="upgrade" onclick="moreClicks()">Buy more clicks</button>
-    <p>Cost: <a id="cost">100</a></p><body onload="init()"> // Set up the initial JavaScript function, as shown in the JavaScript code.
-        <div id="main">
-          <div id="updateMe">
-            <h2>guwii's Favourite Number is:</h2>
-            <h1 id="guwiiFavouriteNumber"></h1>
-          </div>
-        </div>
-   
-
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  <script src="main.js" charset="utf-8" type="text/javascript"></script>
+  <body>
+    <p id="gold">0 Gold Mined</p>
+    <button onclick="mineGold()">Mine Gold</button>
+  </body>
