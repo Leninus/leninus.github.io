@@ -1,3 +1,7 @@
+var techData =
+{
+    refresh: 1000
+}
 var gameData = 
 {
     gold: 0,
@@ -7,7 +11,7 @@ var gameData =
 var mainGameLoop = window.setInterval(function() 
 {
     mineGold()
-}, 1000)
+}, techData.refresh)
 var saveGameLoop = window.setInterval(function()
 {
     localStorage.setItem("goldMinerSave", JSON.stringify(gameData))
